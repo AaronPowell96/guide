@@ -25,7 +25,7 @@ You will need to use the slice() method and specify where to start and where to 
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
-Do not forget that when we truncate the word, we also must count the length added by `...`
+Do not forget that when we truncate the word, we also must count the length and THEN add `...`
 
 > _try to solve the problem now_
 
@@ -39,13 +39,14 @@ Do not forget that when we truncate the word, we also must count the length adde
 
     function truncateString(str, num) {
       // Clear out that junk in your trunk
-      if (str.length > num && num > 3) {
-        return str.slice(0, (num - 3)) + '...';
-      } else if (str.length > num && num <= 3) {
+      if (str.length > num && num <= 3) {
         return str.slice(0, num) + '...';
-      } else {
+      }
+      if (str.length <= num) {
         return str;
       }
+        return str.slice(0, num) + '...'
+      
 
     }
 
